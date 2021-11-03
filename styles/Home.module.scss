@@ -1,0 +1,378 @@
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient(to bottom, #b9deff, #fff);
+}
+
+.containerNight {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+  background-image: linear-gradient(to bottom, #2f3671, #2f2c48);
+}
+
+.main {
+  padding: 5rem 0;
+  margin-bottom: 15rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+}
+
+.headingContainer {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100%;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 48px;
+}
+
+.heading {
+  font-weight: normal;
+  font-size: 48px;
+  justify-self: end;
+}
+
+.city {
+  justify-self: start;
+  padding-left: 1rem;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.city::before {
+  content: "";
+  animation: animate 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s 1 normal;
+  animation-fill-mode: both;
+  transition: transform 1s;
+}
+
+@keyframes animate {
+  0% {
+    content: "Sydney";
+    font-weight: normal;
+  }
+  10% {
+    content: "Melbourne";
+    font-weight: normal;
+  }
+  20% {
+    content: "Brisbane";
+    font-weight: normal;
+  }
+  30% {
+    content: "Perth";
+    font-weight: normal;
+  }
+  40% {
+    content: "Adelaide";
+    font-weight: normal;
+  }
+  50% {
+    content: "Gold Coast";
+    font-weight: normal;
+  }
+  60% {
+    content: "Tweed Heads";
+    font-weight: normal;
+  }
+  70% {
+    content: "Newcastle";
+    font-weight: normal;
+  }
+  80% {
+    content: "Maitland";
+    font-weight: normal;
+  }
+  90% {
+    content: "Canberra";
+    font-weight: normal;
+  }
+  100% {
+    content: "Australia.";
+    font-weight: bold;
+  }
+}
+
+/* Search Bar */
+
+.visuallyHidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.searchForm {
+  width: 350px;
+  height: 40px;
+  border-radius: 40px;
+  border: 1px solid rgba(80, 80, 80, 0.2);
+  background: #fff;
+  padding: 0 20px 0 20px;
+  transition: all 0.3s ease;
+}
+.searchForm.focus {
+  box-shadow: 0 3px 40px rgba(0, 0, 0, 0.15);
+}
+.searchInput {
+  font-size: 14px;
+  background: none;
+  color: #5a6674;
+  width: 350px;
+  height: 40px;
+  border: none;
+  appearance: none;
+  outline: none;
+  &::placeholder {
+    color: #0f0d0c;
+  }
+}
+
+.searchButton {
+  margin-top: 1rem;
+}
+
+/* Weather Info */
+
+.weatherInfo {
+  display: grid;
+  grid-template-columns: 25% 40% 35%;
+  grid-template-rows: 25% 25% 10% 40%;
+  height: 100vh;
+  width: 70%;
+}
+
+.weatherInfoHeader {
+  grid-row: 1;
+  grid-column: 1/4;
+  justify-self: center;
+  align-self: start;
+  font-size: 24px;
+  padding-top: 5rem;
+}
+
+.weatherInfoHeader h1 {
+  font-weight: normal;
+}
+
+.temp {
+  grid-row: 2;
+  grid-column: 1;
+  justify-self: start;
+  align-self: center;
+  font-size: 72px;
+  padding-left: 1rem;
+  font-weight: bold;
+}
+
+.appTemp {
+  grid-row: 2;
+  grid-column: 1;
+  justify-self: start;
+  align-self: end;
+  padding-left: 1rem;
+}
+
+.maxTemp {
+  grid-row: 2;
+  grid-column: 3;
+  justify-self: start;
+  align-self: center;
+  padding-left: 4rem;
+}
+
+.maxTemp p,
+.minTemp p {
+  margin: 0;
+}
+
+.maxTempNumber {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.minTemp {
+  grid-row: 2;
+  grid-column: 3;
+  justify-self: center;
+  align-self: center;
+  padding-left: 2rem;
+}
+
+.minTempNumber {
+  font-size: 36px;
+}
+
+.weatherDescription {
+  grid-row: 2;
+  grid-column: 2;
+  align-self: center;
+  font-size: 48px;
+  font-weight: bold;
+  padding-left: 3rem;
+  padding-top: 1rem;
+}
+
+.weatherIcon {
+  grid-row: 2;
+  grid-column: 2;
+  justify-self: start;
+  align-self: start;
+  padding-left: 2rem;
+}
+
+.rainChance {
+  grid-row: 2;
+  grid-column: 2/3;
+  align-self: end;
+  padding-left: 3rem;
+}
+
+.wind {
+  grid-row: 3;
+  grid-column: 1;
+  align-self: start;
+  justify-self: start;
+  padding-top: 1rem;
+  padding-left: 1rem;
+}
+
+.wind p {
+  margin: 0;
+}
+
+.sunrise {
+  grid-row: 3;
+  grid-column: 2;
+  justify-self: start;
+  padding-top: 1rem;
+  padding-left: 3rem;
+}
+
+.sunrise p,
+.sunset p {
+  margin: 0;
+}
+
+.sunset {
+  grid-row: 3;
+  grid-column: 2;
+  justify-self: center;
+  padding-top: 1rem;
+  padding-right: 7rem;
+  padding-left: 3rem;
+}
+
+.uv {
+  grid-row: 2;
+  grid-column: 1;
+  align-self: start;
+  justify-self: end;
+  padding-right: 2rem;
+}
+
+.newSearchForm {
+  width: 350px;
+  height: 40px;
+  border-radius: 40px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(80, 80, 80, 0.2);
+  background: #fff;
+  padding: 0 20px 0 20px;
+  transition: all 0.3s ease;
+  position: absolute;
+  justify-self: center;
+  margin-top: 2rem;
+}
+.searchForm.focus {
+  box-shadow: 0 3px 40px rgba(0, 0, 0, 0.15);
+}
+
+.line {
+  grid-row: 3;
+  grid-column: 1/4;
+  height: 1px;
+  width: 100%;
+  background-color: black;
+  align-self: end;
+}
+
+.weatherForecast {
+  grid-column: 1/4;
+  grid-row: 4;
+  display: flex;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  justify-content: space-between;
+}
+
+.weatherForecastNight {
+  grid-column: 1/4;
+  grid-row: 4;
+  display: flex;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  justify-content: space-between;
+  color: black;
+}
+
+.forecastItem {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+  background-color: #f9f9fa;
+  width: 175px;
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  border-radius: 20px 20px 0 0;
+}
+
+.forecastItemDescription,
+.forecastItemMaxTemp,
+.forecastItemMinTemp,
+.forecastItem p {
+  padding-left: 1rem;
+}
+
+.forecastItemDescription {
+  font-weight: bold;
+}
+
+.forecastItemMaxTemp {
+  font-weight: bold;
+  font-size: 36px;
+}
+
+.forecastItemRainChance {
+  display: flex;
+  flex-direction: column;
+  align-self: end;
+  background-color: #8cc8ef;
+}
+
+.forecastItemRainChance span {
+  align-self: start;
+  padding: 0.5rem;
+}
